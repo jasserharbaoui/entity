@@ -1,0 +1,49 @@
++-------------------+       +-------------------+
+|   Gymnasium       |       |   Member          |
++-------------------+       +-------------------+
+| GymnasiumID (PK)  |       | MemberID (PK)     |
+| Name              |       | LastName          |
+| Address           |       | FirstName         |
+| TelephoneNumber   |       | Address           |
++-------------------+       | DateOfBirth       |
+                            | Gender            |
+                            +-------------------+
+                                  |
+                                  |
+                                  v
++-------------------+       +-------------------+
+|   Session         |       |   Coach           |
++-------------------+       +-------------------+
+| SessionID (PK)    |       | CoachID (PK)      |
+| SportType         |       | LastName          |
+| Schedule          |       | FirstName         |
+| MaxCapacity       |       | Age               |
++-------------------+       | Specialty         |
+                            +-------------------+
+                                  |
+                                  |
+                                  v
+                           +-------------------+
+                           |   Registers       |
+                           +-------------------+
+                           | MemberID (FK)     |
+                           | GymnasiumID (FK)  |
+                           +-------------------+
+                                  |
+                                  |
+                                  v
+                           +-------------------+
+                           |   Attends         |
+                           +-------------------+
+                           | MemberID (FK)     |
+                           | SessionID (FK)    |
+                           +-------------------+
+                                  |
+                                  |
+                                  v
+                           +-------------------+
+                           |   Leads           |
+                           +-------------------+
+                           | CoachID (FK)      |
+                           | SessionID (FK)    |
+                           +-------------------+
